@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Poppins", system-ui;
+}
+
+:root {
+  --primary_color: #ffffff;
+  --secondery_color: #f1f2f6;
+  --helping_color: #2f3542;
+  --checked_color: #fa8231;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  padding: 30px;
+  background-color: #4b4b4b;
+}
+.main {
+  width: 100%;
+  max-width: 530px;
+  /* height: 500px; */
+  height: auto;
+  background-color: var(--primary_color);
+  border-radius: 8px;
+  padding: 14px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+  /* Header */
+  .header_wrapper {
+    text-align: center;
+    color: var(--helping_color);
+    text-transform: capitalize;
+    border-bottom: 1px solid var(--helping_color);
+    padding-bottom: 8px;
+  }
+
+  /* input style */
+  .age_container {
+    padding-top: 30px;
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      label {
+        font-size: 22px;
+      }
+
+      input {
+        padding: 12px;
+        border: 2px solid var(--helping_color);
+        border-radius: 4px;
+        outline: none;
+        cursor: pointer;
+        &::-webkit-calendar-picker-indicator {
+          font-size: 30px;
+          cursor: pointer;
+        }
+      }
+
+      button {
+        padding: 12px;
+        margin-top: 14px;
+        cursor: pointer;
+        font-size: 22px;
+        border: none;
+        background-color: var(--helping_color);
+        color: var(--primary_color);
+        border-radius: 6px;
+        transition: ease-in-out 0.3s;
+        &:hover {
+          background-color: var(--checked_color);
+        }
+      }
+    }
+  }
+
+  /* output style */
+  .age_output_wrapper {
+    padding: 10px 0;
+    p {
+      font-size: 20px;
+      text-align: center;
+
+      span {
+        font-weight: 300;
+        color: var(--checked_color);
+      }
+    }
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: var(--secondery_color);
+    padding: 16px 40px;
+    border-radius: 8px;
+
+    li {
+      position: relative;
+      &::before {
+        content: "▶";
+        position: absolute;
+        left: -20px;
+      }
+    }
+  }
+}
